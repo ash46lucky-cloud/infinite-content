@@ -1,0 +1,705 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INFINITE CONTENT ∞</title>
+<meta name="description" content="INFINITE CONTENT — Ideas Have No Limits. Discover articles, magazines, creativity and knowledge.">
+
+<style>
+:root{
+  --bg:#090a12;
+  --panel:#131626;
+  --panel2:#1b2033;
+  --gold:#dfc18b;
+  --purple:#a99aff;
+  --white:#f5f3fa;
+  --muted:#a9adbf;
+  --border:#292e43;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:Arial,Helvetica,sans-serif;
+  line-height:1.7;
+}
+a{text-decoration:none;color:inherit}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+header{
+  position:sticky;top:0;z-index:20;
+  background:#090a12ed;
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
+}
+.nav{
+  max-width:1200px;margin:auto;padding:17px 25px;
+  display:flex;justify-content:space-between;
+  align-items:center;gap:20px;flex-wrap:wrap;
+}
+.logo{font-size:23px;font-weight:900;letter-spacing:2px}
+.logo span{color:var(--gold)}
+nav{display:flex;gap:21px;flex-wrap:wrap}
+nav a{font-size:13px;color:var(--muted)}
+nav a:hover{color:var(--gold)}
+.wrap{max-width:1150px;margin:auto;padding:0 24px}
+.hero{
+  min-height:610px;display:flex;align-items:center;
+  text-align:center;position:relative;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 0%,#39305c 0%,transparent 65%);
+}
+.hero-inner{width:100%;padding:90px 0}
+.infinity{
+  font-size:105px;color:var(--gold);line-height:1;
+  text-shadow:0 0 35px #dfc18b55;
+  animation:float 3s ease-in-out infinite;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-13px)}
+}
+.hero h1{
+  font-size:clamp(42px,8vw,82px);
+  line-height:1.1;margin:22px 0;
+  letter-spacing:3px;
+}
+.hero h1 span{color:var(--gold)}
+.hero h2{font-size:21px;letter-spacing:4px;font-weight:400}
+.hero p{max-width:650px;margin:22px auto;color:var(--muted);font-size:17px}
+.btn{
+  display:inline-block;padding:12px 22px;border:0;
+  border-radius:30px;background:var(--gold);
+  color:#17131a;font-weight:bold;transition:.25s;
+}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.1)}
+.btn.secondary{
+  background:var(--panel2);color:var(--white);
+  border:1px solid var(--border);
+}
+.btn.danger{background:#773e50;color:white}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+section{padding:75px 0}
+.section-top{margin-bottom:30px}
+.eyebrow{
+  color:var(--gold);font-size:11px;
+  letter-spacing:3px;text-transform:uppercase;font-weight:bold;
+}
+h2.section-title{font-size:clamp(28px,4vw,40px);margin:7px 0}
+.subtitle{color:var(--muted);max-width:680px}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
+  gap:22px;
+}
+.card{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:17px;overflow:hidden;transition:.3s;
+}
+.card:hover{transform:translateY(-6px);border-color:#8e7dc8}
+.cover{
+  height:165px;display:grid;place-items:center;
+  font-size:52px;color:var(--gold);
+  background:linear-gradient(135deg,#292344,#55466d);
+}
+.cover img{width:100%;height:100%;object-fit:cover}
+.card-body{padding:20px}
+.tag{
+  color:var(--gold);font-size:11px;
+  text-transform:uppercase;letter-spacing:2px;font-weight:bold;
+}
+.card h3{font-size:20px;line-height:1.35;margin:9px 0}
+.card p{font-size:14px;color:var(--muted)}
+.card-foot{
+  display:flex;justify-content:space-between;
+  gap:10px;margin-top:16px;
+  font-size:12px;color:var(--muted);
+}
+.filters{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.chip{
+  padding:9px 17px;border-radius:25px;
+  border:1px solid var(--border);
+  background:var(--panel);color:var(--muted);
+}
+.chip.active,.chip:hover{border-color:var(--gold);color:var(--gold)}
+input,textarea,select{
+  width:100%;padding:13px 15px;margin:7px 0 16px;
+  border:1px solid var(--border);border-radius:10px;
+  background:#0b0e19;color:var(--white);
+  outline:none;
+}
+input:focus,textarea:focus,select:focus{border-color:var(--purple)}
+textarea{min-height:180px;resize:vertical}
+label{font-size:13px;color:var(--muted)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.panel{
+  background:var(--panel);border:1px solid var(--border);
+  border-radius:18px;padding:27px;
+}
+.hidden{display:none!important}
+.divider{border:0;border-top:1px solid var(--border);margin:28px 0}
+.creator-box{
+  padding:38px;border-radius:23px;
+  background:linear-gradient(130deg,#1b1830,#111827);
+  border:1px solid #40365b;
+}
+.creator-symbol{font-size:65px;color:var(--gold)}
+.creator-box p{color:var(--muted);margin:12px 0}
+.creator-name{font-size:29px;color:var(--gold);margin:10px 0}
+#reader{
+  position:fixed;inset:0;z-index:40;
+  background:#080a12f7;overflow:auto;padding:25px;
+}
+.reader-inner{
+  max-width:800px;margin:30px auto;
+  background:var(--panel);padding:35px;
+  border-radius:18px;border:1px solid var(--border);
+}
+.reader-inner h1{font-size:34px;margin:18px 0}
+.reader-text{white-space:pre-wrap;overflow-wrap:anywhere;margin-top:25px}
+#toast{
+  position:fixed;bottom:20px;left:50%;
+  transform:translateX(-50%);
+  background:var(--gold);color:#17131a;
+  padding:12px 22px;border-radius:12px;
+  z-index:60;display:none;
+}
+footer{
+  text-align:center;padding:40px 20px;
+  border-top:1px solid var(--border);color:var(--muted);
+}
+footer .logo{margin-bottom:10px}
+.empty{color:var(--muted);padding:20px 0}
+@media(max-width:650px){
+  .nav{flex-direction:column;align-items:flex-start}
+  nav{gap:13px}
+  .hero{min-height:520px}
+  .hero-inner{padding:65px 0}
+  .infinity{font-size:80px}
+  .form-grid{grid-template-columns:1fr}
+  .creator-box{padding:25px}
+  section{padding:55px 0}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="nav">
+<a class="logo" href="#home">INFINITE <span>∞</span></a>
+<nav>
+<a href="#home">Home</a>
+<a href="#explore">Explore</a>
+<a href="#categories">Categories</a>
+<a href="#about">About</a>
+<a href="#founder">Founder</a>
+<a href="#studio">Creator Studio</a>
+</nav>
+</div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+<div class="wrap hero-inner">
+<div class="infinity">∞</div>
+<div class="eyebrow">A universe of ideas</div>
+<h1>INFINITE <span>CONTENT</span></h1>
+<h2>IDEAS HAVE NO LIMITS.</h2>
+<p>
+A space where knowledge meets imagination.
+Discover fascinating stories, explore different perspectives
+and experience the power of words.
+</p>
+<div class="actions">
+<a class="btn" href="#explore">Explore Now</a>
+<a class="btn secondary" href="#about">Discover Our Vision</a>
+</div>
+</div>
+</section>
+
+<section id="explore">
+<div class="wrap">
+<div class="section-top">
+<div class="eyebrow">Discover · Read · Imagine</div>
+<h2 class="section-title">Explore the Infinite</h2>
+<p class="subtitle">
+Every publication is a new perspective.
+Explore ideas from different worlds and discover something worth thinking about.
+</p>
+</div>
+
+<div class="filters" id="filters">
+<button class="chip active" data-filter="All">All</button>
+<button class="chip" data-filter="Technology">Technology</button>
+<button class="chip" data-filter="Science">Science</button>
+<button class="chip" data-filter="Business">Business</button>
+<button class="chip" data-filter="Education">Education</button>
+<button class="chip" data-filter="Sports">Sports</button>
+<button class="chip" data-filter="Creativity">Creativity</button>
+<button class="chip" data-filter="Lifestyle">Lifestyle</button>
+</div>
+
+<input id="search" placeholder="Search publications, ideas and topics...">
+
+<div class="grid" id="publications"></div>
+</div>
+</section>
+
+<section id="categories">
+<div class="wrap">
+<div class="section-top">
+<div class="eyebrow">Find your world</div>
+<h2 class="section-title">Explore Every Possibility</h2>
+<p class="subtitle">Different interests. Different voices. One infinite platform.</p>
+</div>
+
+<div class="grid">
+<div class="card"><div class="cover">⌘</div><div class="card-body">
+<div class="tag">01 · Innovation</div><h3>Technology</h3>
+<p>Explore artificial intelligence, inventions, computers, robotics and the technologies shaping tomorrow.</p></div></div>
+
+<div class="card"><div class="cover">✦</div><div class="card-body">
+<div class="tag">02 · Discovery</div><h3>Science & Space</h3>
+<p>Discover the universe, physics, mysteries of nature and extraordinary scientific discoveries.</p></div></div>
+
+<div class="card"><div class="cover">↗</div><div class="card-body">
+<div class="tag">03 · Ambition</div><h3>Business & Finance</h3>
+<p>Explore entrepreneurship, leadership, business thinking and the world of economics.</p></div></div>
+
+<div class="card"><div class="cover">✎</div><div class="card-body">
+<div class="tag">04 · Knowledge</div><h3>Education</h3>
+<p>Learn new concepts, discover useful knowledge and explore ideas that make learning exciting.</p></div></div>
+
+<div class="card"><div class="cover">★</div><div class="card-body">
+<div class="tag">05 · Passion</div><h3>Sports</h3>
+<p>Discover sporting stories, analysis, memorable performances and the spirit of competition.</p></div></div>
+
+<div class="card"><div class="cover">◇</div><div class="card-body">
+<div class="tag">06 · Expression</div><h3>Creativity & Culture</h3>
+<p>Explore writing, art, design, entertainment, culture and original perspectives.</p></div></div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="wrap">
+<div class="section-top">
+<div class="eyebrow">More than a publishing website</div>
+<h2 class="section-title">The Idea Behind INFINITE</h2>
+</div>
+<div class="panel">
+<h3 style="font-size:25px;color:var(--gold)">A world without creative boundaries.</h3>
+<p class="subtitle" style="margin-top:15px">
+INFINITE CONTENT is built around the belief that ideas are among
+the most powerful things in the world. Knowledge should be explored,
+creativity should be encouraged and meaningful perspectives should
+be shared.
+</p>
+<p class="subtitle" style="margin-top:15px">
+From science and technology to sports, business and storytelling,
+this platform brings different subjects together in one reading experience.
+</p>
+<p style="margin-top:20px;color:var(--gold);font-weight:bold">
+Think beyond boundaries. Discover beyond limits.
+</p>
+</div>
+</div>
+</section>
+
+<section id="founder">
+<div class="wrap">
+<div class="creator-box">
+<div class="creator-symbol">∞</div>
+<div class="eyebrow">The mind behind the vision</div>
+<h2 class="section-title">Meet the Founder</h2>
+<div class="creator-name">Aashrith G.</div>
+<p>
+A student, curious thinker and aspiring creator who believes
+that age should never limit ambition and that imagination
+can be the beginning of something extraordinary.
+</p>
+<p>
+INFINITE CONTENT comes from a simple vision:
+to create a space where knowledge, creativity and ideas
+can exist beyond boundaries.
+</p>
+<p>
+I believe the future belongs to people who keep questioning,
+keep learning and dare to think differently.
+This platform represents that belief.
+</p>
+<p style="color:var(--gold);font-weight:bold">
+One vision. Endless possibilities. ∞
+</p>
+</div>
+</div>
+</section>
+
+<section id="studio">
+<div class="wrap">
+<div class="section-top">
+<div class="eyebrow">Owner access</div>
+<h2 class="section-title">Creator Studio</h2>
+<p class="subtitle">Create and manage your articles and digital magazines.</p>
+</div>
+
+<div class="panel" id="loginPanel">
+<h3>Creator Login</h3>
+<p class="subtitle">Only the website owner can publish content.</p>
+<label>Owner PIN</label>
+<input id="pin" type="password" placeholder="Enter your creator PIN">
+<button class="btn" id="unlock">Enter Creator Studio</button>
+</div>
+
+<div class="panel hidden" id="editorPanel">
+<div style="display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap">
+<h3>Welcome, Aashrith!</h3>
+<button class="btn secondary" id="lock">Lock Studio</button>
+</div>
+<hr class="divider">
+
+<h3 id="editorHeading">Create a publication</h3>
+<label>Publication title</label>
+<input id="title" placeholder="Enter your title">
+
+<div class="form-grid">
+<div><label>Publication type</label>
+<select id="type"><option>Article</option><option>Magazine</option></select></div>
+<div><label>Category</label>
+<select id="category">
+<option>Technology</option><option>Science</option>
+<option>Business</option><option>Education</option>
+<option>Sports</option><option>Creativity</option>
+<option>Lifestyle</option><option>General</option>
+</select></div>
+</div>
+
+<label>Short description</label>
+<textarea id="description" style="min-height:85px" placeholder="Write a short introduction..."></textarea>
+
+<label>Cover image URL (optional)</label>
+<input id="cover" type="url" placeholder="https://example.com/image.jpg">
+
+<label>Full content</label>
+<textarea id="content" placeholder="Write your article or magazine content here..."></textarea>
+
+<div class="actions" style="justify-content:flex-start">
+<button class="btn" id="publish">Publish Now</button>
+<button class="btn secondary" id="draft">Save Draft</button>
+<button class="btn secondary hidden" id="cancel">Cancel Editing</button>
+</div>
+
+<hr class="divider">
+<h3>Your Publications & Drafts</h3>
+<div class="grid" id="myPosts"></div>
+</div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="logo">INFINITE <span>∞</span> CONTENT</div>
+<p>Ideas Have No Limits.</p>
+<p style="margin-top:10px">Created with a vision by Aashrith G.</p>
+<small>© <span id="year"></span> INFINITE CONTENT. All rights reserved.</small>
+</footer>
+
+<div id="reader" class="hidden">
+<div class="reader-inner">
+<button class="btn secondary" id="closeReader">← Back</button>
+<div id="readerBody"></div>
+</div>
+</div>
+<div id="toast"></div>
+
+<script>
+const OWNER_PIN = "INFINITE2026";
+const STORAGE_KEY = "infinite_content_publications_v1";
+
+let posts = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+let unlocked = false;
+let editing = null;
+let filter = "All";
+
+const $ = id => document.getElementById(id);
+
+function notify(text){
+ const el=$("toast");
+ el.textContent=text;
+ el.style.display="block";
+ setTimeout(()=>el.style.display="none",3000);
+}
+
+function save(){
+ localStorage.setItem(STORAGE_KEY,JSON.stringify(posts));
+}
+
+function escapeHTML(value){
+ return String(value ?? "").replace(/[&<>"']/g,c=>({
+ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+ }[c]));
+}
+
+function card(post,owner=false){
+ const image=post.cover
+ ? `<img src="${escapeHTML(post.cover)}" alt="Publication cover">`
+ : "∞";
+
+ return `<article class="card">
+ <div class="cover">${image}</div>
+ <div class="card-body">
+ <div class="tag">${escapeHTML(post.type)} · ${escapeHTML(post.category)}</div>
+ <h3>${escapeHTML(post.title)}</h3>
+ <p>${escapeHTML(post.description)}</p>
+ <div class="card-foot">
+ <span>By Aashrith G.</span><span>${post.status==="draft"?"Draft":"Published"}</span>
+ </div>
+ <div class="actions" style="justify-content:flex-start;margin-top:15px">
+ ${post.status==="published"?`<button class="btn secondary" data-read="${post.id}">Read</button>`:""}
+ ${owner?`<button class="btn secondary" data-edit="${post.id}">Edit</button>
+ <button class="btn danger" data-delete="${post.id}">Delete</button>`:""}
+ </div>
+ </div></article>`;
+}
+
+function renderExplore(){
+ const term=$("search").value.toLowerCase();
+ const visible=posts.filter(p=>
+ p.status==="published" &&
+ (filter==="All"||p.category===filter) &&
+ [p.title,p.description,p.category,p.content].join(" ").toLowerCase().includes(term)
+ );
+ $("publications").innerHTML=visible.length
+ ? visible.map(p=>card(p)).join("")
+ : `<p class="empty">No publications found. Check another category or search term.</p>`;
+}
+
+function renderMine(){
+ const mine=posts.filter(p=>true);
+ $("myPosts").innerHTML=mine.length
+ ? mine.map(p=>card(p,true)).join("")
+ : `<p class="empty">You haven't published anything yet. Create your first publication!</p>`;
+}
+
+function clearEditor(){
+ editing=null;
+ $("editorHeading").textContent="Create a publication";
+ $("title").value="";
+ $("description").value="";
+ $("cover").value="";
+ $("content").value="";
+ $("type").value="Article";
+ $("category").value="General";
+ $("publish").textContent="Publish Now";
+ $("cancel").classList.add("hidden");
+}
+
+function savePost(status){
+ const title=$("title").value.trim();
+ const content=$("content").value.trim();
+
+ if(!title||!content){
+  notify("Please enter a title and content.");
+  return;
+ }
+
+ const post={
+  id:editing||String(Date.now()),
+  title,
+  description:$("description").value.trim(),
+  cover:$("cover").value.trim(),
+  content,
+  type:$("type").value,
+  category:$("category").value,
+  status,
+  updated:Date.now()
+ };
+
+ if(editing){
+  const index=posts.findIndex(p=>p.id===editing);
+  if(index!==-1) posts[index]=post;
+ }else{
+  posts.unshift(post);
+ }
+
+ save();
+ clearEditor();
+ renderExplore();
+ renderMine();
+ notify(status==="published"?"Publication published!":"Draft saved!");
+}
+
+function openReader(id){
+ const post=posts.find(p=>p.id===id);
+ if(!post)return;
+
+ const cover=post.cover
+ ? `<img src="${escapeHTML(post.cover)}" style="width:100%;max-height:300px;object-fit:cover;border-radius:12px" alt="">`
+ : "";
+
+ $("readerBody").innerHTML=`
+ <div class="tag" style="margin-top:25px">${escapeHTML(post.type)} · ${escapeHTML(post.category)}</div>
+ <h1>${escapeHTML(post.title)}</h1>
+ <p style="color:var(--muted)">Written by Aashrith G.</p>
+ ${cover}
+ <p style="color:var(--muted);margin-top:15px">${escapeHTML(post.description)}</p>
+ <div class="reader-text">${escapeHTML(post.content)}</div>`;
+ $("reader").classList.remove("hidden");
+}
+
+function handleCards(event){
+ const read=event.target.closest("[data-read]");
+ const edit=event.target.closest("[data-edit]");
+ const del=event.target.closest("[data-delete]");
+
+ if(read)openReader(read.dataset.read);
+
+ if(edit){
+  const p=posts.find(x=>x.id===edit.dataset.edit);
+  if(!p)return;
+  editing=p.id;
+  $("editorHeading").textContent="Edit publication";
+  $("title").value=p.title;
+  $("description").value=p.description;
+  $("cover").value=p.cover;
+  $("content").value=p.content;
+  $("type").value=p.type;
+  $("category").value=p.category;
+  $("publish").textContent="Update Publication";
+  $("cancel").classList.remove("hidden");
+  $("studio").scrollIntoView({behavior:"smooth"});
+ }
+
+ if(del){
+  if(!confirm("Are you sure you want to delete this publication?"))return;
+  posts=posts.filter(p=>p.id!==del.dataset.delete);
+  save();
+  renderExplore();
+  renderMine();
+  notify("Publication deleted.");
+ }
+}
+
+$("unlock").onclick=()=>{
+ if($("pin").value===OWNER_PIN){
+  unlocked=true;
+  $("loginPanel").classList.add("hidden");
+  $("editorPanel").classList.remove("hidden");
+  renderMine();
+  notify("Welcome to Creator Studio!");
+ }else{
+  notify("Incorrect PIN.");
+ }
+};
+
+$("lock").onclick=()=>{
+ unlocked=false;
+ $("editorPanel").classList.add("hidden");
+ $("loginPanel").classList.remove("hidden");
+ $("pin").value="";
+ clearEditor();
+};
+
+$("publish").onclick=()=>savePost("published");
+$("draft").onclick=()=>savePost("draft");
+$("cancel").onclick=clearEditor;
+
+$("search").oninput=renderExplore;
+
+$("filters").onclick=e=>{
+ const button=e.target.closest("[data-filter]");
+ if(!button)return;
+ filter=button.dataset.filter;
+ document.querySelectorAll(".chip").forEach(b=>
+ b.classList.toggle("active",b===button)
+ );
+ renderExplore();
+};
+
+$("publications").addEventListener("click",handleCards);
+$("myPosts").addEventListener("click",handleCards);
+$("closeReader").onclick=()=>$("reader").classList.add("hidden");
+
+$("year").textContent=new Date().getFullYear();
+
+/* Sample publications to make Explore feel alive */
+const samples=[
+{
+id:"sample1",title:"The Future of Artificial Intelligence",
+type:"Article",category:"Technology",
+description:"How intelligent technology is changing the way people live, work and imagine the future.",
+content:"Artificial intelligence is becoming an important part of modern life. From learning and communication to scientific research, it is opening new possibilities. The future will depend on how thoughtfully people develop and use these technologies.",
+status:"published"
+},
+{
+id:"sample2",title:"Beyond Our Planet: The Mystery of Space",
+type:"Magazine",category:"Science",
+description:"Explore distant galaxies, black holes, stars and the biggest questions about our universe.",
+content:"Space is filled with questions that continue to inspire scientists. Every discovery gives us another piece of the puzzle and reminds us how much there is still to understand.",
+status:"published"
+},
+{
+id:"sample3",title:"Think Like an Entrepreneur",
+type:"Article",category:"Business",
+description:"A look at problem-solving, creativity and the mindset behind building meaningful ideas.",
+content:"Entrepreneurship begins with identifying a problem. Great ideas become valuable when they solve real needs. Learning, experimentation and patience are essential parts of building something useful.",
+status:"published"
+},
+{
+id:"sample4",title:"Learning Beyond the Classroom",
+type:"Article",category:"Education",
+description:"Why curiosity, independent learning and asking questions matter.",
+content:"Education is more than remembering information. It is about understanding, asking questions, testing ideas and applying knowledge to the world around us.",
+status:"published"
+},
+{
+id:"sample5",title:"The Psychology of Great Sports Performances",
+type:"Magazine",category:"Sports",
+description:"Explore focus, preparation, teamwork and decision-making in competitive sport.",
+content:"Sports performances are shaped by preparation, teamwork and the ability to make decisions under pressure. Consistent practice and learning from experience help athletes develop their skills.",
+status:"published"
+},
+{
+id:"sample6",title:"The Power of Creative Thinking",
+type:"Article",category:"Creativity",
+description:"How imagination can help people see ordinary things in extraordinary ways.",
+content:"Creativity is not limited to art. It can be used in science, business, education and everyday problem-solving. A new perspective can turn a familiar challenge into an opportunity.",
+status:"published"
+},
+{
+id:"sample7",title:"Building Better Everyday Habits",
+type:"Article",category:"Lifestyle",
+description:"Small routines, thoughtful choices and the value of consistency.",
+content:"Meaningful progress often comes from small actions repeated over time. A good routine can make space for learning, creativity, rest and personal growth.",
+status:"published"
+},
+{
+id:"sample8",title:"Robotics: Where Ideas Become Machines",
+type:"Magazine",category:"Technology",
+description:"Discover how engineering, programming and imagination come together in robotics.",
+content:"Robotics combines mechanical design, electronics and software. It is an exciting field because it transforms ideas into machines that can interact with the physical world.",
+status:"published"
+},
+{
+id:"sample9",title:"The Questions Science Has Yet to Answer",
+type:"Article",category:"Science",
+description:"Some of the biggest mysteries that continue to challenge researchers.",
+content:"Science advances by asking questions and testing explanations. Many mysteries remain, and each new discovery helps researchers understand more about nature and the universe.",
+status:"published"
+}
+];
+
+if(posts.length===0){
+ posts=samples;
+ save();
+}
+renderExplore();
+
+</script>
+</body>
+</html>
